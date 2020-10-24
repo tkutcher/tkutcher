@@ -8,15 +8,17 @@
 <img src="https://img.shields.io/static/v1?label=&labelColor=E1306C&message=@tkutcher_&logo=instagram&color=404040&link=https://www.instagram.com/tkutcher_/&logoColor=ffffff" alt="instagram" href="https://www.instagram.com/tkutcher_"/>
 </span>
 
+---
+
 <div>
   <a href="https://www.dicorp.com">
-    <img src="/blue-no-bg.png" alt="DICORP, Inc." width="100">
+    <img src="/blue-no-bg.png" alt="DICORP, Inc." height="100">
   </a>
 </div>
                                                          
 <div>
   <a href="https://www.zpdsolutions.com">
-    <img src="/zpd-purple-no-bg.png" alt="DICORP, Inc." width="100">
+    <img src="/zpd-purple-no-bg.png" alt="DICORP, Inc." height="100">
   </a>
 </div>
 
