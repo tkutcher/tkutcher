@@ -10,13 +10,13 @@
 
 <div>
   <a href="https://www.dicorp.com">
-    <img src="/blue-no-bg.png" alt="DICORP, Inc." style="max-wdith: 150px>
+    <img src="/blue-no-bg.png" alt="DICORP, Inc." width="100">
   </a>
 </div>
                                                          
 <div>
   <a href="https://www.zpdsolutions.com">
-    <img src="/zpd-purple-no-bg.png" alt="DICORP, Inc." style="max-wdith: 150px>
+    <img src="/zpd-purple-no-bg.png" alt="DICORP, Inc." width="100">
   </a>
 </div>
 
