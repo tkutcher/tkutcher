@@ -10,17 +10,17 @@
 
 ---
 
-<div>
+<span>
   <a href="https://www.dicorp.com">
     <img src="/blue-no-bg.png" alt="DICORP, Inc." height="100">
   </a>
 </div>
                                                          
-<div>
+<span>
   <a href="https://www.zpdsolutions.com">
     <img src="/zpd-purple-no-bg.png" alt="DICORP, Inc." height="100">
   </a>
-</div>
+</span>
 
 ---
 
