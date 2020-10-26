@@ -1,0 +1,18 @@
+# Mac Ignores
+.DS_Store
+
+# .idea stuff that changes too often
+workspace.xml
+
+# vc/config stuff
+.git
+
+# JavaScript Ignores
+node_modules
+
+# Python Project Ignores
+__pycache__/
+*.py[cod]
+*$py.class
+venv
+htmlcov/

@@ -1,5 +1,12 @@
 ### Hi there 👋
 
+- 🙋‍♂️ My name is Tim Kutcher
+- 🧑‍💻 I'm a Software Engineer at [DICORP, Inc.](https://dicorp.com) / [ZPD Solutions](https://zpdsolutions.com)
+- 🐦 I studied Computer Science at Johns Hopkins University
+- 🌐 Check out [https://tkutcher.com](https://tkutcher.com)
+- 📫 Contact me at `me@tkutcher.com`
+- ⚾ Outside of software I'm in to sports and played college baseball at JHU
+
 <span>
 <img src="https://img.shields.io/static/v1?label=GitLab&message=@tkutcher&logo=gitlab&labelColor=292961&color=4a4a4a&link=https://gitlab.com/tkutcher" alt="gitlab" href="https://gitlab.com/tkutcher"/>
 <img src="https://img.shields.io/static/v1?label=GitHub&message=@tkutcher&logo=github&color=4a4a4a&link=https://github.com/tkutcher&labelColor=2fc453" alt="github" href="https://github.com/tkutcher"/>
@@ -8,24 +15,9 @@
 <img src="https://img.shields.io/static/v1?label=&labelColor=E1306C&message=@tkutcher_&logo=instagram&color=404040&link=https://www.instagram.com/tkutcher_/&logoColor=ffffff" alt="instagram" href="https://www.instagram.com/tkutcher_"/>
 </span>
 
----
-
-<span>
-  <a href="https://www.dicorp.com">
-    <img src="/blue-no-bg.png" alt="DICORP, Inc." height="100">
-  </a>
-</div>
-                                                         
-<span>
-  <a href="https://www.zpdsolutions.com">
-    <img src="/zpd-purple-no-bg.png" alt="DICORP, Inc." height="100">
-  </a>
-</span>
-
----
-
-- 🌐 Check out [https://tkutcher.com](https://tkutcher.com)
-- 📫 Contact me at `me@tkutcher.com`
 
 ----
-⚾ 🏐
+
+### Resources
+- [Python project config files](configs/python) (gitignores, flake8, coverage, etc.)
+- [Public Keys](keys)
