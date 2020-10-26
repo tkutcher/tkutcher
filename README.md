@@ -20,4 +20,5 @@
 
 ### Resources
 - [Python project config files](configs/python) (gitignores, flake8, coverage, etc.)
+- [Unix run commands](rc/)
 - [Public Keys](keys)
