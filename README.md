@@ -4,7 +4,7 @@
 - 🧑‍💻 I'm a Software Engineer at [DICORP, Inc.](https://dicorp.com) / [ZPD Solutions](https://zpdsolutions.com)
 - 🐦 I studied Computer Science at Johns Hopkins University
 - 🌐 Check out [https://tkutcher.com](https://tkutcher.com)
-- 📫 Contact me at `me@tkutcher.com`
+- 📫 Contact me at `tim@tkutcher.com`
 - ⚾ Outside of software I'm in to sports and played college baseball at JHU
 
 <span>
