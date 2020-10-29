@@ -33,6 +33,10 @@ alias gco='git checkout'
 alias unstage='git rm --cached'
 alias gitblah='git add --all && git commit -m "blah" && git push'
 
+# svn aliases
+alias svns='svn status'
+alias svncm='svn commit -m'
+
 # nav aliases
 alias up='cd ..'
 alias back='cd -'
