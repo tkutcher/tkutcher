@@ -1,9 +1,9 @@
 [flake8]
-max-line-length = 80
+max-line-length = 100
 count = True
 enable-extensions = Q I
 ignore = examples/*
-exclude = dist,build,*.pyc,build,*.egg,.git,.pytest_cache
+exclude = dist,build,*.pyc,build,*.egg,.git,.pytest_cache,.venv
 per-file-ignores=
     tests/*:E5,E702
 
@@ -13,4 +13,4 @@ multiline-quotes = single
 
 # flake8:import-order
 import-order-style = appnexus
-application-import-names = tests,{{TODO}}
+application-import-names = tests,package_name
