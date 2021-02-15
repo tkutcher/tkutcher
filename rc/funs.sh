@@ -11,3 +11,10 @@ cdl () {
     cd "$1"
     ls -la
 }
+
+# svnclone
+svnclone () {
+    mkdir "$1"
+    svn checkout "$2" "$1"
+}
+
