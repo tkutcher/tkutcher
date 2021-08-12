@@ -30,7 +30,7 @@
 </a>
   
 <a href="https://angular.io/">
-    <img src="https://img.shields.io/badge/%20-Angular-de0031?logo=angular&labelColor=303030" alt="Angular">
+    <img src="https://img.shields.io/badge/%20-Angular-de0031?logo=angular&labelColor=126cc8" alt="Angular">
 </a>
 
 <a href="https://www.typescriptlang.org/">
@@ -70,6 +70,7 @@
 <a href="https://www.jenkins.io/">
     <img src="https://img.shields.io/badge/%20-Jenkins-4a5667?logo=jenkins&labelColor=F5F5F5" alt="Jenkins">
 </a>
+  
   
 </div>
 
