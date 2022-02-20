@@ -1,6 +1,9 @@
 
-# stuff specific to this machine (more or less)
-PATH=$HOME/bin:/usr/local/bin:$PATH  # bash bin
+# Bash bin
+PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Sym-linking python to default to brew's python3
+PATH=/opt/homebrew/opt/python@3.9/libexec/bin:$PATH
 
 export PATH=$PATH
 
