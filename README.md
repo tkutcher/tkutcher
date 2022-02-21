@@ -1,7 +1,9 @@
 ### Hi there 👋
 
 - 🙋‍♂️ My name is Tim Kutcher
-- 🧑‍💻 I'm a Software Engineer at [DICORP, Inc.](https://dicorp.com) / [ZPD Solutions](https://zpdsolutions.com)
+- 🧑‍💻 Working in Software
+  - [DICORP, Inc.](https://dicorp.com) | Software Engineer
+  - [ZPD Solutions](https://zpdsolutions.com) | Software Engineer
 - 🐦 I studied Computer Science at Johns Hopkins University
 - 🌐 Check out [https://tkutcher.com](https://tkutcher.com)
 - 📫 Contact me at `tim@tkutcher.com`
@@ -28,6 +30,11 @@
 
   <a href="https://www.instagram.com/tkutcher_">
     <img src="https://img.shields.io/static/v1?label=&labelColor=E1306C&message=@tkutcher_&logo=instagram&color=404040&link=https://www.instagram.com/tkutcher_/&logoColor=ffffff&style=for-the-badge" alt="instagram" />
+  </a>
+  
+  
+  <a href="https://medium.com/@tkutcher">
+  <img src="https://img.shields.io/static/v1?label=&labelColor=000000&message=@tkutcher&logo=medium&color=404040&logoColor=white&link=https://medium.com/@tkutcher&style=for-the-badge" alt="medium" />
   </a>
 </div>
 
@@ -79,6 +86,10 @@
   
 <a href="https://www.jenkins.io/">
     <img src="https://img.shields.io/badge/%20-Jenkins-4a5667?logo=jenkins&labelColor=F5F5F5" alt="Jenkins">
+</a>
+  
+<a href="https://gitlab.com">
+    <img src="https://img.shields.io/static/v1?label=&message=GitLab%20CI&logo=gitlab&color=4a4a4a&link=https://gitlab.com&labelColor=292961" alt="gitlab" />
 </a>
   
   
