@@ -88,6 +88,10 @@
 ----
 
 ### Resources
-- [Python project config files](configs/python) (gitignores, flake8, coverage, etc.)
 - [Unix run commands](rc/)
-- [Public Keys](keys)
+- [Public SSH Keys](keys/)
+- [Resources / Standard Configuration Files](configs/)
+  - [Standard .gitignore files](configs/gitignore/)
+  - [Python Project Configuration Files](configs/python/)
+- [Cheatsheets and quick How-To reminders](cheatsheets/)
+- [Personal Resume](resume/)

@@ -1,0 +1,35 @@
+### General
+## Environment Files
+.env
+
+## Temporary/Local Directories
+.local/
+tmp/
+
+## System Files
+.DS_Store
+Thumbs.db
+
+## IDE's
+# JetBrains
+.idea/*
+!.idea/*.iml
+!.idea/runConfigurations
+!.idea/dictionaries
+!.idea/copyright
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+## Other Common Ignores
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace

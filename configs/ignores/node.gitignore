@@ -1,0 +1,27 @@
+### TypeScript/JavaScript/Node/Angular
+
+## Angular Specific
+/.angular/cache
+.coverage
+
+## Compiled Output
+/dist
+/local-lib
+/tmp
+/out-tsc
+/bazel-out
+
+## Dependencies
+/node_modules
+**/node_modules
+
+## Misc
+/.sass-cache
+chrome-profiler-events*.json
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings

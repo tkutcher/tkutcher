@@ -1,0 +1,30 @@
+### Python
+## Virtual Environments
+venv/
+.venv/
+
+## Byte-compiled / Optimized / DLL files
+__pycache__/
+*.pyc
+*.py[cod]
+*$py.class
+
+## Distribution / Packaging
+build/
+dist/
+eggs/
+wheels/
+*.egg-info/
+*.egg
+MANIFEST
+
+## Unit Tests, Coverage Reports, Tool Cache Files
+coverage/
+.coverage
+.coverage.*
+.pytest_cache/
+.xunit/
+.cov/
+.tox
+.outputs/
+.tools
