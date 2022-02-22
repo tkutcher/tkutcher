@@ -4,7 +4,7 @@
 PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Sym-linking python to default to brew's python3 at 3.9
-PATH=/opt/homebrew/opt/python@3.9/libexec/bin:$PATH
+PATH=/opt/homebrew/opt/python@3.10/libexec/bin:$PATH
 
 export PATH=$PATH
 
