@@ -1,7 +1,3 @@
-With this setup I have this repository cloned to
-`${HOME}/gd/devel/tkutcher/tkutcher/` and so my _actual_ `~/.zshrc` on my
-machine named `Jackson` is simply:
-
-```sh
-source ~/gd/devel/tkutcher/tkutcher/rc/jackson.zshrc
-```
+The idea of this directory is to be the more modularized rc commands. This way,
+rc files for specific machines can source whatever files from this directory
+are relevant to them!
