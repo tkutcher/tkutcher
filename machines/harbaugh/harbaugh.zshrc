@@ -1,12 +1,24 @@
 
-# PATH variables
-PATH=$HOME/bin:/usr/local/bin:$PATH  # bash bin
-PATH=/opt/homebrew/opt/python@3.10/libexec/bin:$PATH  # default to brew's python 3.10 link
+## PATH variables
+
+# bash bin
+PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# default to brew's python 3.10 link
+PATH=/opt/homebrew/opt/python@3.10/libexec/bin:$PATH
+
+# export the path
 export PATH=$PATH
 
-# Configuring where this repository is installed and sourcing specific files.
-TKUTCHER_RC_DIR="${HOME}/tk/lib/tkutcher/rc"
-source "${TKUTCHER_RC_DIR}/aliases.sh"
-source "${TKUTCHER_RC_DIR}/env.sh"
-source "${TKUTCHER_RC_DIR}/funs.sh"
-source "${TKUTCHER_RC_DIR}/zsh.zsh"
+
+## Core rc setup
+
+# where the tkutcher repository is cloned ("installed") to.p
+export TK_LIB_DIR="${HOME}/tk/lib/tkutcher"
+
+# sourcing files relevant for this machine
+source "${TK_LIB_DIR}/rc/aliases.sh"
+source "${TK_LIB_DIR}/rc/env.sh"
+source "${TK_LIB_DIR}/rc/funs.sh"
+source "${TK_LIB_DIR}/machines/harbaugh/zsh-setup.zsh"
+
