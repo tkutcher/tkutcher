@@ -5,8 +5,8 @@ PATH=/opt/homebrew/opt/python@3.10/libexec/bin:$PATH  # default to brew's python
 export PATH=$PATH
 
 # Configuring where this repository is installed and sourcing specific files.
-TKUTCHER_RC_DIR=/usr/local/lib/tkutcher/rc
-source "$TKUTCHER_RC_DIR"/aliases.sh
-source "$TKUTCHER_RC_DIR"/env.sh
-source "$TKUTCHER_RC_DIR"/funs.sh
-source "$TKUTCHER_RC_DIR"/zsh.sh
+TKUTCHER_RC_DIR="${HOME}/tk/lib/tkutcher/rc"
+source "${TKUTCHER_RC_DIR}/aliases.sh"
+source "${TKUTCHER_RC_DIR}/env.sh"
+source "${TKUTCHER_RC_DIR}/funs.sh"
+source "${TKUTCHER_RC_DIR}/zsh.zsh"
