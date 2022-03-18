@@ -38,7 +38,8 @@ alias svns='svn status'
 alias svncm='svn commit -m'
 alias svn_stage_deletes='svn status | grep "^!" | awk "{print $2}" | xargs svn delete'
 alias svn_stage_adds='svn status | grep "^?" | awk "{print $2}" | xargs svn delete'
-alias svn_stage_all='svn_stage_deletes && svn_stage_all'
+alias svn_stage_all='svn_stage_adds && svn_stage_deletes'
+alias svn_sta='svn_stage_all'
 
 
 # nav aliases
