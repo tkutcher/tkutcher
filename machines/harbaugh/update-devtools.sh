@@ -17,6 +17,7 @@ pip install --upgrade pip
 
 # update dependencies from requirements.txt file
 pip install \
+  --upgrade \
   -r "${REQUIREMENTS_PATH}" \
   --index-url "${ASL_GITLAB_TECH_INDEX_URL}"
 
