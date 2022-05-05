@@ -26,6 +26,7 @@ alias gpull='git pull'
 alias gcmsg='git commit -m'
 alias gcsmg='gcmsg'  # handle typo
 alias gplog='git log --pretty=oneline'
+alias glog='gplog'
 alias gs='git status'
 alias gaas='git add --all && git status'
 alias gcp='git cherry-pick'
