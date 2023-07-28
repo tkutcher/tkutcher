@@ -7,8 +7,8 @@ PATH=$HOME/bin:/usr/local/bin:$PATH
 # default to brew's python 3.11 link
 PATH=/opt/homebrew/opt/python@3.11/libexec/bin:$PATH
 
-# poetry
-PATH=$HOME/.poetry/bin:$PATH
+# poetry, etc.
+PATH=$HOME/.local/bin:$PATH
 
 # export the path
 export PATH=$PATH
