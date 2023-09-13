@@ -25,7 +25,8 @@ alias gpa='git remote | xargs -L1 git push --all'
 alias gpull='git pull'
 alias gcmsg='git commit -m'
 alias gcsmg='gcmsg'  # handle typo
-alias gplog='git log --pretty=oneline'
+alias gplog='git log --pretty=oneline --abbrev-commit'
+alias glog='gplog'
 alias gs='git status'
 alias gaas='git add --all && git status'
 alias gcp='git cherry-pick'
@@ -36,6 +37,11 @@ alias gitblah='git add --all && git commit -m "blah" && git push'
 # svn aliases
 alias svns='svn status'
 alias svncm='svn commit -m'
+alias svn_stage_deletes='svn status | grep "^!" | awk "{print $2}" | xargs svn delete'
+alias svn_stage_adds='svn status | grep "^?" | awk "{print $2}" | xargs svn delete'
+alias svn_stage_all='svn_stage_adds && svn_stage_deletes'
+alias svn_sta='svn_stage_all'
+
 
 # nav aliases
 alias up='cd ..'
