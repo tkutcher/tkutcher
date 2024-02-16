@@ -16,8 +16,10 @@ export PATH=$PATH
 
 ## Core rc setup
 
-# where the tkutcher repository is cloned ("installed") to.p
+# where the tkutcher repository is cloned ("installed") to
 export TK_LIB_DIR="${HOME}/tk/lib/tkutcher"
+export TK_GDRIVE_DIR="${HOME}/Google Drive/My Drive"
+export TK_TURBOSCAN_DIR="${HOME}/Library/Mobile Documents/iCloud~com~novosoft~TurboScan/Documents"
 
 # sourcing files relevant for this machine
 source "${TK_LIB_DIR}/rc/aliases.sh"
