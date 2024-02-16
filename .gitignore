@@ -1,0 +1,96 @@
+### Project-Specific
+
+build-info.json
+server/azfunc/system_info/build-info.json
+webapp/src/assets/build-info.json
+
+### General
+## Environment Files
+.env
+
+## Temporary/Local Directories
+.local/
+tmp/
+
+## System Files
+.DS_Store
+Thumbs.db
+
+
+### IDE's
+## JetBrains
+.idea/*
+!.idea/*.iml
+!.idea/runConfigurations
+!.idea/dictionaries
+!.idea/copyright
+
+## VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+## General
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+### TypeScript/JavaScript/Node/Angular
+## Compiled Output
+/dist
+/local-lib
+/tmp
+/out-tsc
+/bazel-out
+
+## Dependencies
+/node_modules
+**/node_modules
+
+## Misc
+/.sass-cache
+chrome-profiler-events*.json
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+### Python
+## Virtual Environments
+venv/
+.venv/
+
+## Byte-compiled / Optimized / DLL files
+__pycache__/
+*.pyc
+*.py[cod]
+*$py.class
+
+## Distribution / Packaging
+build/
+dist/
+eggs/
+wheels/
+*.egg-info/
+*.egg
+MANIFEST
+
+## Unit Tests, Coverage Reports, Tool Cache Files
+coverage/
+.coverage
+.coverage.*
+.pytest_cache/
+.xunit/
+.cov/
+.tox
+.outputs/
+.tools
