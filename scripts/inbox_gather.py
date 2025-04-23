@@ -74,24 +74,21 @@ def _normalize_inbox_file_names(inbox_dir: pathlib.Path):
         new_path = inbox_dir / _normalize_file_name(f)
         f.rename(new_path)
 
-def main(dry_run: bool = False):
+def main():
     gdrive_path = _get_local_path(GDRIVE_DIR_ENV_VAR)
     turboscan_path = _get_local_path(TURBOSCAN_DIR_ENV_VAR)
     inbox_dir = gdrive_path / GDRIVE_INBOX_RELPATH
 
+    logger.info("Starting inbox gathering process")
+    logger.info(f"Gathering files from {turboscan_path}")
     _move_files_from_other_dir(turboscan_path, inbox_dir)
     _normalize_inbox_file_names(inbox_dir)
+    logger.info("Done!")
 
 
 if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Do not actually move any files, just perform a dry run",
-    )
-
     ns = parser.parse_args()
-    main(dry_run=ns.dry_run)
+    main()
