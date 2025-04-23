@@ -3,6 +3,7 @@ import pathlib
 import logging
 import re
 import shutil
+import subprocess
 from datetime import datetime
 
 logger = logging.getLogger(__name__)
@@ -13,6 +14,7 @@ LOG_TRUNCATE_SRC_SIZE = 18
 
 GDRIVE_DIR_ENV_VAR = "TK_GDRIVE_DIR"
 TURBOSCAN_DIR_ENV_VAR = "TK_TURBOSCAN_DIR"
+SHORTCUT_SYNC_NAME = "Move Reminders to Obsidian Inbox File"
 
 GDRIVE_INBOX_RELPATH = pathlib.Path("hq/_inbox")
 
@@ -32,7 +34,7 @@ def _get_local_path(env_var) -> pathlib.Path:
 def _is_normalized(p: pathlib.Path) -> bool:
     matches = bool(re.match(r"^\d{4}-\d{2}-\d{2}", p.name))
     return matches
-    
+
 
 def _clean_file_name(orig: str, lower=False) -> str:
     s = (
@@ -74,7 +76,7 @@ def _normalize_inbox_file_names(inbox_dir: pathlib.Path):
         new_path = inbox_dir / _normalize_file_name(f)
         f.rename(new_path)
 
-def main():
+def main(sync_reminders=True):
     gdrive_path = _get_local_path(GDRIVE_DIR_ENV_VAR)
     turboscan_path = _get_local_path(TURBOSCAN_DIR_ENV_VAR)
     inbox_dir = gdrive_path / GDRIVE_INBOX_RELPATH
@@ -82,7 +84,11 @@ def main():
     logger.info("Starting inbox gathering process")
     logger.info(f"Gathering files from {turboscan_path}")
     _move_files_from_other_dir(turboscan_path, inbox_dir)
+    logger.info("Normalizing file names")
     _normalize_inbox_file_names(inbox_dir)
+    if sync_reminders:
+        logger.info("Syncing reminders via shortcut")
+        subprocess.run(["shortcuts", "run", SHORTCUT_SYNC_NAME])
     logger.info("Done!")
 
 
