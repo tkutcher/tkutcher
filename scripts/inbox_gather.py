@@ -14,20 +14,12 @@ LOG_TRUNCATE_SRC_SIZE = 18
 GDRIVE_DIR_ENV_VAR = "TK_GDRIVE_DIR"
 TURBOSCAN_DIR_ENV_VAR = "TK_TURBOSCAN_DIR"
 
-GDRIVE_TO_FILE_RELPATH = pathlib.Path("records/_to-file")
-
-GENERAL_RECORDS_RELPATH = pathlib.Path("records/general")
-KEEPSAKES_RECORDS_RELPATH = pathlib.Path("records/keepsakes")
+GDRIVE_INBOX_RELPATH = pathlib.Path("hq/_inbox")
 
 IGNORE_FILES = [
     ".DS_Store",
+    "__inbox__.md"
 ]
-
-
-DIR_KEY_MAP = {
-    "$keepsakes$": KEEPSAKES_RECORDS_RELPATH,
-    "$keepsake$": KEEPSAKES_RECORDS_RELPATH,
-}
 
 
 def _get_local_path(env_var) -> pathlib.Path:
@@ -37,17 +29,20 @@ def _get_local_path(env_var) -> pathlib.Path:
         logger.error(f"Missing {env_var} environment variable!")
         exit(1)
 
+def _is_normalized(p: pathlib.Path) -> bool:
+    matches = bool(re.match(r"^\d{4}-\d{2}-\d{2}", p.name))
+    return matches
+    
 
-
-def _clean_file_name(orig: str) -> str:
-    return (
+def _clean_file_name(orig: str, lower=False) -> str:
+    s = (
         re.sub(r"\s+", " ", orig)  # condense whitespace
         .strip()  # strip trailing space
         .replace(" - ", "-")  # replace space-dash-space
         .replace(" ", "-")  # replace space with hyphen
         .replace("__", "_") # handle double underscore
-        .lower()  # lower-case-ify
     )
+    return s.lower() if lower else s
 
 def _get_created_when_str(p: pathlib.Path) -> str:
     created_when_timestamp = p.stat().st_birthtime
@@ -55,43 +50,37 @@ def _get_created_when_str(p: pathlib.Path) -> str:
     return created_when.strftime("%Y-%m-%d")
 
 
-def _get_target_path(p: pathlib.Path) -> pathlib.Path:
-    filename = p.name
+def _normalize_file_name(p: pathlib.Path) -> str:
+    if _is_normalized(p):
+        return p.name
+    return f"{_get_created_when_str(p)}--{_clean_file_name(p.name)}"
 
-    target_dir = GENERAL_RECORDS_RELPATH
 
-    for k in DIR_KEY_MAP:
-        if filename.startswith(k):
-            filename = filename.lstrip(k).lstrip("_")
-            target_dir = DIR_KEY_MAP[k]
-            break
+def _move_files_from_other_dir(dropoff_dir: pathlib.Path, inbox_dir: pathlib.Path):
+    for f in dropoff_dir.glob("*"):
+        if f.name in IGNORE_FILES:
+            continue
+        normalized = _normalize_file_name(f)
+        logger.info(f"Gathered {f.name} -> {normalized}")
+        shutil.move(f, inbox_dir / normalized)
 
-    created_when_str = _get_created_when_str(p)
-    clean_file_name = _clean_file_name(filename)
-    target_name = f"{created_when_str}_{clean_file_name}"
 
-    return target_dir / target_name
-
+def _normalize_inbox_file_names(inbox_dir: pathlib.Path):
+    for f in inbox_dir.glob("*"):
+        x = f.name
+        y = IGNORE_FILES
+        if f.name in IGNORE_FILES:
+            continue
+        new_path = inbox_dir / _normalize_file_name(f)
+        f.rename(new_path)
 
 def main(dry_run: bool = False):
     gdrive_path = _get_local_path(GDRIVE_DIR_ENV_VAR)
     turboscan_path = _get_local_path(TURBOSCAN_DIR_ENV_VAR)
+    inbox_dir = gdrive_path / GDRIVE_INBOX_RELPATH
 
-    dropoff_dirs = [
-        gdrive_path / GDRIVE_TO_FILE_RELPATH,
-        turboscan_path,
-    ]
-
-    for dropoff_dir in dropoff_dirs:
-        for f in dropoff_dir.glob("*"):
-            if f.name in IGNORE_FILES:
-                continue
-            target = _get_target_path(f)
-            if not dry_run:
-                shutil.move(f, gdrive_path / target)
-            truncated_src = f.name[:LOG_TRUNCATE_SRC_SIZE]
-            truncated_src += "..." if len(f.name) > LOG_TRUNCATE_SRC_SIZE else ""
-            logger.info(f"DONE {repr(truncated_src)} --> {target}")
+    _move_files_from_other_dir(turboscan_path, inbox_dir)
+    _normalize_inbox_file_names(inbox_dir)
 
 
 if __name__ == '__main__':
