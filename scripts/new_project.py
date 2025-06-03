@@ -8,8 +8,6 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 logger.addHandler(logging.StreamHandler())
 
-LOG_TRUNCATE_SRC_SIZE = 18
-
 GDRIVE_DIR_ENV_VAR = "TK_GDRIVE_DIR"
 
 GDRIVE_PROJECTS_RELPATH = pathlib.Path("hq/02-projects")
