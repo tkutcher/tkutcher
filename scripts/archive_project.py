@@ -13,7 +13,7 @@ logger.addHandler(logging.StreamHandler())
 GDRIVE_DIR_ENV_VAR = "TK_GDRIVE_DIR"
 
 GDRIVE_PROJECTS_RELPATH = pathlib.Path("hq/02-projects")
-GDRIVE_ARCHIVED_PROJECTS_RELPATH = pathlib.Path("hq/05-res/archived-projects")
+GDRIVE_ARCHIVED_PROJECTS_RELPATH = pathlib.Path("hq/06-res/archived-projects")
 
 
 def _get_local_path(env_var) -> pathlib.Path:
