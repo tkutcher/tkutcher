@@ -22,7 +22,7 @@ GDRIVE_INBOX_RELPATH = pathlib.Path("hq/00-Sys/00-Inbox")
 
 IGNORE_FILES = [
     ".DS_Store",
-    "__inbox__.md"
+    "_00-Inbox.md"
 ]
 
 
