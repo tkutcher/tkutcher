@@ -18,7 +18,7 @@ GDRIVE_DIR_ENV_VAR = "TK_GDRIVE_DIR"
 TURBOSCAN_DIR_ENV_VAR = "TK_TURBOSCAN_DIR"
 SHORTCUT_SYNC_NAME = "Move Reminders to Obsidian Inbox File"
 
-GDRIVE_INBOX_RELPATH = pathlib.Path("hq/_inbox")
+GDRIVE_INBOX_RELPATH = pathlib.Path("hq/00-Sys/00-Inbox")
 
 IGNORE_FILES = [
     ".DS_Store",
