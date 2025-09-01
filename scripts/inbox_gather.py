@@ -20,10 +20,7 @@ SHORTCUT_SYNC_NAME = "Move Reminders to Obsidian Inbox File"
 
 GDRIVE_INBOX_RELPATH = pathlib.Path("hq/00-Sys/00-Inbox")
 
-IGNORE_FILES = [
-    ".DS_Store",
-    "00-Inbox.md"
-]
+IGNORE_FILES = [".DS_Store", "00-Inbox.md"]
 
 
 def _get_local_path(env_var) -> pathlib.Path:
@@ -32,6 +29,7 @@ def _get_local_path(env_var) -> pathlib.Path:
     except (KeyError, EnvironmentError):
         logger.error(f"Missing {env_var} environment variable!")
         exit(1)
+
 
 def _is_normalized(p: pathlib.Path) -> bool:
     matches = bool(re.match(r"^\d{4}-\d{2}-\d{2}", p.name))
@@ -44,9 +42,10 @@ def _clean_file_name(orig: str, lower=False) -> str:
         .strip()  # strip trailing space
         .replace(" - ", "-")  # replace space-dash-space
         .replace(" ", "-")  # replace space with hyphen
-        .replace("__", "_") # handle double underscore
+        .replace("__", "_")  # handle double underscore
     )
     return s.lower() if lower else s
+
 
 def _get_created_when_str(p: pathlib.Path) -> str:
     created_when_timestamp = p.stat().st_birthtime
@@ -78,6 +77,7 @@ def _normalize_inbox_file_names(inbox_dir: pathlib.Path):
         new_path = inbox_dir / _normalize_file_name(f)
         f.rename(new_path)
 
+
 def main(sync_reminders=True):
     gdrive_path = _get_local_path(GDRIVE_DIR_ENV_VAR)
     turboscan_path = _get_local_path(TURBOSCAN_DIR_ENV_VAR)
@@ -94,7 +94,7 @@ def main(sync_reminders=True):
     logger.info("Done!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
