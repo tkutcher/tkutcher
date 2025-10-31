@@ -18,7 +18,7 @@ export PATH=$PATH
 
 # where the tkutcher repository is cloned ("installed") to
 export TK_LIB_DIR="${HOME}/tk/lib/tkutcher"
-export TK_GDRIVE_DIR="${HOME}/Google Drive/My Drive"
+export TK_GDRIVE_DIR="${HOME}/tk/gdrive"
 export TK_TURBOSCAN_DIR="${HOME}/Library/Mobile Documents/iCloud~com~novosoft~TurboScan/Documents"
 
 # sourcing files relevant for this machine
@@ -26,4 +26,8 @@ source "${TK_LIB_DIR}/rc/aliases.sh"
 source "${TK_LIB_DIR}/rc/env.sh"
 source "${TK_LIB_DIR}/rc/funs.sh"
 source "${TK_LIB_DIR}/machines/harbaugh/zsh-setup.zsh"
+
+
+# Run the inbox-gather script
+inbox-gather
 
