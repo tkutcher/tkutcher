@@ -1,13 +1,11 @@
-### Hi there 👋
+# tkutcher 👋
 
-- 🙋‍♂️ My name is Tim Kutcher
-- 🧑‍💻 Working in Software
-  - [DICORP, Inc.](https://dicorp.com) | Software Engineer
-  - [ZPD Solutions](https://zpdsolutions.com) | Software Engineer
-- 🐦 I studied Computer Science at Johns Hopkins University
-- 🌐 Check out [https://tkutcher.com](https://tkutcher.com)
-- 📫 Contact me at `tim@tkutcher.com`
-- ⚾ Outside of software I'm in to sports and played college baseball at JHU
+- 🙋‍♂️ Tim Kutcher
+- 🧑‍💻 Software Engineer
+- 💼 [DICORP, Inc.](https://dicorp.com) | Chief Technology & Security Officer
+- 🐦 Johns Hopkins Computer Science '19
+- 🌐 [https://tkutcher.com](https://tkutcher.com)
+- 📫 [tkutcher@outlook.com](mailto:tkutcher@outlook.com)
 
 <div align="center">
   <a href="https://gitlab.com/tkutcher">
@@ -104,5 +102,3 @@
 - [Resources / Standard Configuration Files](configs/)
   - [Standard .gitignore files](configs/gitignore/)
   - [Python Project Configuration Files](configs/python/)
-- [Cheatsheets and quick How-To reminders](cheatsheets/)
-- [Personal Resume](resume/)
