@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 
+import logging
 import os
 import pathlib
-import logging
 import re
 import shutil
-import subprocess
 from datetime import datetime
 
 logger = logging.getLogger(__name__)
@@ -14,13 +13,10 @@ logger.addHandler(logging.StreamHandler())
 
 LOG_TRUNCATE_SRC_SIZE = 18
 
-GDRIVE_DIR_ENV_VAR = "TK_GDRIVE_DIR"
 TURBOSCAN_DIR_ENV_VAR = "TK_TURBOSCAN_DIR"
-SHORTCUT_SYNC_NAME = "Move Reminders to Obsidian Inbox File"
+INBOX_DIR_ENV_VAR = "TK_INBOX_DIR"
 
-GDRIVE_INBOX_RELPATH = pathlib.Path("hq/00-Sys/00-Inbox")
-
-IGNORE_FILES = [".DS_Store", "00-Inbox.md"]
+IGNORE_FILES = [".DS_Store", "__inbox.md"]
 
 
 def _get_local_path(env_var) -> pathlib.Path:
@@ -59,39 +55,27 @@ def _normalize_file_name(p: pathlib.Path) -> str:
     return f"{_get_created_when_str(p)}--{_clean_file_name(p.name)}"
 
 
-def _move_files_from_other_dir(dropoff_dir: pathlib.Path, inbox_dir: pathlib.Path):
+def _move_files_from_dropoff_dir(title: str, dropoff_dir: pathlib.Path, inbox_dir: pathlib.Path):
+    logger.info(f"Gathering files from {title}...")
+    logger.info(f"dropoff_dir: {dropoff_dir}")
+    num_files_gathered = 0
     for f in dropoff_dir.glob("*"):
         if f.name in IGNORE_FILES:
             continue
+        num_files_gathered += 1
         normalized = _normalize_file_name(f)
-        logger.info(f"Gathered {f.name} -> {normalized}")
+        logger.info(f"{title} - Gathered {f.name} -> {normalized}")
         shutil.move(f, inbox_dir / normalized)
+    logger.info(f"Done. Gathered {num_files_gathered} files from {title}.")
 
 
-def _normalize_inbox_file_names(inbox_dir: pathlib.Path):
-    for f in inbox_dir.glob("*"):
-        x = f.name
-        y = IGNORE_FILES
-        if f.name in IGNORE_FILES:
-            continue
-        new_path = inbox_dir / _normalize_file_name(f)
-        f.rename(new_path)
-
-
-def main(sync_reminders=True):
-    gdrive_path = _get_local_path(GDRIVE_DIR_ENV_VAR)
+def main():
     turboscan_path = _get_local_path(TURBOSCAN_DIR_ENV_VAR)
-    inbox_dir = gdrive_path / GDRIVE_INBOX_RELPATH
+    inbox_dir = _get_local_path(INBOX_DIR_ENV_VAR)
 
     logger.info("Starting inbox gathering process")
-    logger.info(f"Gathering files from {turboscan_path}")
-    _move_files_from_other_dir(turboscan_path, inbox_dir)
-    logger.info("Normalizing file names")
-    _normalize_inbox_file_names(inbox_dir)
-    if sync_reminders:
-        logger.info("Syncing reminders via shortcut")
-        subprocess.run(["shortcuts", "run", SHORTCUT_SYNC_NAME])
-    logger.info("Done!")
+
+    _move_files_from_dropoff_dir("TurboScan", turboscan_path, inbox_dir)
 
 
 if __name__ == "__main__":
