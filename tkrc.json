@@ -1,0 +1,20 @@
+{
+  "env": {
+    "TK_LIB_DIR": "$HOME/TK/github/tkutcher",
+    "TK_INBOX_DIR": "$HOME/TK/tk-vault/_sys/inbox"
+  },
+  "go2_targets": {
+    "tk": "$HOME/TK",
+    "github": "$HOME/TK/github"
+  },
+  "include_vimrc": true,
+  "source_files": [
+    "rc/defaults.sh",
+    "rc/omz.zsh",
+    "rc/aliases.sh",
+    "rc/cdl.sh",
+    "rc/mkcd.sh",
+    "rc/go2.zsh",
+    "rc/greeting.sh"
+  ]
+}

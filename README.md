@@ -99,6 +99,37 @@
 ### Resources
 - [Unix run commands](rc/)
 - [Public SSH Keys](keys/)
-- [Resources / Standard Configuration Files](configs/)
-  - [Standard .gitignore files](configs/gitignore/)
-  - [Python Project Configuration Files](configs/python/)
+- [Gitignore templates](ignores/)
+- [Linting configuration templates](linting/)
+
+----
+
+### Shell Setup
+
+This repo includes a shell configuration system for setting up a new machine.
+
+**Quick start:**
+
+```zsh
+# 1. Clone the repo
+git clone https://github.com/tkutcher/tkutcher ~/TK/github/tkutcher
+
+# 2. Edit ~/.tkrc.json to configure your machine (created on first run)
+zsh ~/TK/github/tkutcher/install.zsh
+
+# 3. Optionally add the p10k instant prompt at the top of ~/.zshrc (before the TK_RC block):
+#    if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#      source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#    fi
+```
+
+**[`tkrc.json`](tkrc.json)** is the template config — `install.zsh` scaffolds it to `~/.tkrc.json` on first run. Edit `~/.tkrc.json` per machine; it is not tracked by this repo.
+
+| Property | Type | Description |
+|---|---|---|
+| `env` | object | Key/value pairs exported into the shell (`TK_LIB_DIR`, `TK_INBOX_DIR`, etc.) |
+| `go2_targets` | object | Named directory shortcuts for the `go2` command |
+| `source_files` | array | Ordered list of rc files (relative to repo root) to source in `~/.zshrc` |
+| `include_vimrc` | boolean | If `true`, symlinks `~/.vimrc` to `rc/.vimrc` |
+
+`install.zsh` is idempotent — re-running it updates the `BEGIN TK_RC / END TK_RC` block in `~/.zshrc` in place.
