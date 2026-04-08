@@ -1,11 +1,12 @@
 
 # shortcuts
-alias ll='ls -l'
-alias la='ls -lA'
+alias ll='gls -lh'
+alias la='gls -lhAp --group-directories-first --color=auto'
 alias cla='clear && la'
 alias cls='clear'
 alias c='clear'
 alias dir='ls -lAh'
+alias newshell='source ~/.zshrc'
 
 # typos
 alias clea='clear'
@@ -41,7 +42,6 @@ alias svn_stage_deletes='svn status | grep "^!" | awk "{print $2}" | xargs svn d
 alias svn_stage_adds='svn status | grep "^?" | awk "{print $2}" | xargs svn delete'
 alias svn_stage_all='svn_stage_adds && svn_stage_deletes'
 alias svn_sta='svn_stage_all'
-
 
 # nav aliases
 alias up='cd ..'

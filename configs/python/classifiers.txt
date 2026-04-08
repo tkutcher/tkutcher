@@ -1,6 +1,0 @@
-Development Status :: 3 - Alpha
-License :: OSI Approved :: MIT License
-Intended Audience :: Developers
-Programming Language :: Python :: 3
-Operating System :: OS Independent
-Natural Language :: English

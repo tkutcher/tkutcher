@@ -1,4 +1,8 @@
 ### General
+## CI/Testing Output
+.outputs/
+.output/
+
 ## Environment Files
 .env
 
@@ -26,10 +30,12 @@ Thumbs.db
 !.vscode/extensions.json
 .history/*
 
+# Sublime
+*.sublime-workspace
+
 ## Other Common Ignores
 .project
 .classpath
 .c9/
 *.launch
 .settings/
-*.sublime-workspace
