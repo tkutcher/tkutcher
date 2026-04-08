@@ -33,4 +33,5 @@ _go2_complete() {
   local -a targets=(${(k)_GO2_TARGETS})
   _describe 'target' targets
 }
+
 compdef _go2_complete go2

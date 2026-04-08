@@ -41,3 +41,5 @@ SAVEHIST=10000
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
+
+source $ZSH/oh-my-zsh.sh
